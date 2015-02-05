@@ -1,25 +1,17 @@
 package ca.bleathem.plugin;
 
+import android.accounts.AccountManager;
 import android.app.Activity;
-import android.os.Bundle;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.util.Log;
+import com.google.android.gms.auth.GoogleAuthUtil;
+import com.google.android.gms.auth.UserRecoverableAuthException;
+import com.google.android.gms.common.AccountPicker;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
-
-import com.google.android.gms.auth.GoogleAuthUtil;
-import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.android.gms.common.AccountPicker;
-
-import android.accounts.AccountManager;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.util.Log;
-
-import java.lang.Exception;
-import java.lang.String;
-import java.util.Iterator;
-import java.util.Set;
 
 public class OauthGoogleServices extends CordovaPlugin {
     private static final String TAG = "OauthGoogleServices";
