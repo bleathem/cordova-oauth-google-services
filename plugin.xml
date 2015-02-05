@@ -1,0 +1,30 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="ca.bleathem.plugin.OauthGoogleServices"
+        version="0.0.1">
+    <engines>
+        <engine name="cordova-android" platform="android" version=">=3.0.0"/>
+    </engines>
+    <name>OauthGoogleServices</name>
+    <description>Cordova plugin to retrieve a Google oauth token on Android devices using Google Play Services
+    </description>
+    <author>Brian Leathem</author>
+    <repo>https://github.com/bleathem/cordova-oauth-google-services</repo>
+    <issue>https://github.com/bleathem/cordova-oauth-google-services/issues</issue>
+    <license>Apache 2.0</license>
+    <keywords>cordova,android,oauth,google play services</keywords>
+
+    <js-module src="www/OauthGoogleServices.js" name="OauthGoogleServices">
+        <merges target="cordova.plugins.oauth"/>
+    </js-module>
+
+    <platform name="android">
+        <source-file src="src/android/OauthGoogleServices.java" target-dir="src/ca/bleathem/plugin"/>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OauthGoogleServices">
+                <param name="android-package" value="ca.bleathem.plugin.OauthGoogleServices"/>
+            </feature>
+        </config-file>
+        <dependency id="com.google.playservices"/>
+    </platform>
+</plugin>

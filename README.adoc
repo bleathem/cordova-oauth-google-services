@@ -1,0 +1,31 @@
+# cordova-oauth-google-services
+
+A cordova plugin that uses Google Play Services to fetch an Oauth2 token for a locally logged-in user, requiring no additional user authentication.
+This Oauth2 token can then be used to authorize the Google Oauth2 REST APIs.
+
+This plugin will fail on older Android devices (pre 2.2) or on devices where Google Play services is otherwise not available.
+In such situations, the user can manually fallback to an Oauth2 token request using HTTP.
+
+## Dependencies
+* https://github.com/MobileChromeApps/google-play-services
+
+## Installation
+Install this plugin with the command:
+----
+cordova plugin add https://github.com/bleathem/cordova-oauth-google-services.git
+----
+
+Remove this plugin with the command:
+----
+cordova plugin remove ca.bleathem.plugin.OauthGoogleServices```
+----
+
+## Using the plugin
+[source, javascript]
+----
+window.cordova.plugins.oauth([scope], done, [err]);
+----
+
+* `scope` *optional*: the scope for the Ouath2 token request.  Default: `https://www.googleapis.com/auth/plus.me`
+* `done` *required*: a success callback invoked the Oauth2 token as it's single parameter
+* `err` *optional*: a failure callback invoked when there is an error retrieving the token
